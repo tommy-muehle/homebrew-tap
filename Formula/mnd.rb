@@ -2,17 +2,16 @@
 class Mnd < Formula
   desc "Magic number detector for Go"
   homepage "https://github.com/tommy-muehle/go-mnd"
-  version "2.2.0"
+  version "2.3.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.2.0/go-mnd_2.2.0_darwin_amd64.tar.gz"
-    sha256 "7e30af49306da8c1021c5c3d872bcc987cda2038a30bad111b089c9d815e50b0"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.2.0/go-mnd_2.2.0_linux_amd64.tar.gz"
-      sha256 "fbaca19ca38216e4328dce384d4937145477c42095f252307018edcd8dcfcce5"
-    end
+    url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.3.0/go-mnd_2.3.0_darwin_amd64.tar.gz"
+    sha256 "09839f8ce7bce19a75638f15dcacbf3686c028404e3cfdca35afad67f277464a"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.3.0/go-mnd_2.3.0_linux_amd64.tar.gz"
+    sha256 "d8166b76ec3495b08b5216410f66866eeb60b80ae6ffdb9b3e3a158330309b60"
   end
 
   def install
