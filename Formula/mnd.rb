@@ -18,7 +18,7 @@ class Mnd < Formula
   end
 
   def install
-    bin.install "go-mnd"
+    bin.install "mnd"
   end
 
   test do
