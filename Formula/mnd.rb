@@ -6,7 +6,6 @@ class Mnd < Formula
   desc "Magic number detector for Go"
   homepage "https://github.com/tommy-muehle/go-mnd"
   version "2.4.0"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.4.0/go-mnd_2.4.0_darwin_amd64.tar.gz"
