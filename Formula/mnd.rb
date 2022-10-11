@@ -5,23 +5,31 @@
 class Mnd < Formula
   desc "Magic number detector for Go"
   homepage "https://github.com/tommy-muehle/go-mnd"
-  version "2.5.0"
+  version "2.5.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.5.0/go-mnd_2.5.0_darwin_amd64.tar.gz"
-      sha256 "263c97e23673cd1656fb687d55dd69537cdb61756c1e233074d602c28dd50013"
+    url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.5.1/go-mnd_2.5.1_darwin_amd64.tar.gz"
+    sha256 "1ad5e61fdb4dd226aaca1a8e96fcb7eecac5571e89aa5672cc1372ff8bbf4224"
 
-      def install
-        bin.install "mnd"
+    def install
+      bin.install "mnd"
+    end
+
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Mnd
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.5.0/go-mnd_2.5.0_linux_amd64.tar.gz"
-      sha256 "f6b60b0c29bbf3707c2c97e210d1299c2636f3a9bd0d68eeac1f19a516db6794"
+      url "https://github.com/tommy-muehle/go-mnd/releases/download/v2.5.1/go-mnd_2.5.1_linux_amd64.tar.gz"
+      sha256 "21e0b7c08e4cc93d7aa349767f3b72a8d0fd178a9b21c07f37471ba5d2d29752"
 
       def install
         bin.install "mnd"
